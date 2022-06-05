@@ -11,7 +11,7 @@ It's recommended to open it using <B>Android Studio Artic Fox</B> or above
 
 ## Architecture
 
-Clean architecture based on MVVM (Model-View-ViewModel) with RxJava and StateFlow
+Clean architecture based on MVVM (Model-View-ViewModel) with Coroutines , Flow, and StateFlow
 
 The following diagram shows all the layers and how each layer interacts with each other. This
 architecture uses a layered software architecture.
