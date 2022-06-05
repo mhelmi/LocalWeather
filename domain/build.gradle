@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: '../config-android.gradle'
+
+dependencies {
+  implementation kotlinCoroutines
+  implementation gson
+  implementation hiltLib
+
+  kapt hiltKapt
+}

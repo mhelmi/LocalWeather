@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/card_view_city"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginStart="@dimen/_5sdp"
+  android:layout_marginEnd="@dimen/_5sdp"
+  android:clickable="true"
+  android:focusable="true"
+  app:cardBackgroundColor="@color/white"
+  app:cardCornerRadius="@dimen/_5sdp"
+  app:cardElevation="@dimen/_4sdp"
+  app:cardPreventCornerOverlap="true"
+  app:cardUseCompatPadding="true">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <TextView
+      android:id="@+id/tv_title"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/_10sdp"
+      android:textAppearance="?attr/textAppearanceListItem"
+      app:layout_constraintEnd_toStartOf="@+id/checkbox_favorite"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+      android:id="@+id/checkbox_favorite"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:button="@drawable/drawable_favorite_checkbox"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

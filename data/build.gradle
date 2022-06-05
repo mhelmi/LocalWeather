@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply from: '../config-android.gradle'
+
+android {
+
+  flavorDimensions("build")
+  productFlavors {
+    dev {
+      buildConfigField "String", 'WEATHER_API_KEY', "\"825b112b22414835af8120102220306\""
+      buildConfigField "String", 'WEATHER_BASE_URL', "\"http://api.weatherapi.com/v1/\""
+    }
+    prod {
+      buildConfigField "String", 'WEATHER_API_KEY', "\"825b112b22414835af8120102220306\""
+      buildConfigField "String", 'WEATHER_BASE_URL', "\"http://api.weatherapi.com/v1/\""
+    }
+  }
+}
+
+dependencies {
+  implementation project(":domain")
+
+  implementation networking
+  implementation room
+  implementation hiltLib
+  implementation datastore
+
+  kapt roomKapt
+  kapt hiltKapt
+}

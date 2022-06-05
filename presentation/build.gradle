@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply from: '../config-android.gradle'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'kotlin-android'
+
+android {
+  defaultConfig {
+    applicationId "com.github.mhelmi.localweather"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+    debug {
+      debuggable true
+      minifyEnabled false
+      shrinkResources false
+      versionNameSuffix "-debug"
+    }
+  }
+
+  flavorDimensions("build")
+  productFlavors {
+    dev {
+      versionNameSuffix ".${project.VERSION_CODE}-dev"
+      applicationIdSuffix '.dev'
+    }
+    prod {
+    }
+  }
+}
+
+dependencies {
+  implementation project(":domain")
+  implementation project(":data")
+
+  implementation androidCoreGroup
+  implementation navigation
+  implementation networking
+  implementation hiltLib
+
+  implementation thirdParty
+  implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+  kapt hiltKapt
+
+  testImplementation testImplementationGroup
+  androidTestImplementation androidTestImplementationGroup
+}
