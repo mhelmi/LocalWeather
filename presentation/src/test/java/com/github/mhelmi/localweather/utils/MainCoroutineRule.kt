@@ -1,4 +1,4 @@
-package com.github.mhelmi.unsplashphotos.utils
+package com.github.mhelmi.localweather.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
