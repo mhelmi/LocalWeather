@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.github.mhelmi.localweather.common.state.UiState
 import com.github.mhelmi.localweather.domain.model.*
 import com.github.mhelmi.localweather.domain.weather.GetWeatherForecastUseCase
-import com.github.mhelmi.unsplashphotos.utils.MainCoroutineRule
+import com.github.mhelmi.localweather.utils.MainCoroutineRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
