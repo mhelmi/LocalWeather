@@ -105,14 +105,18 @@ class WeatherDetailsViewModelTest {
   @Test
   fun `when loadWeatherForecast() then return Init then loading ui state`() =
     runBlockingTest {
+      // Arrange
       Mockito.`when`(getWeatherForecastUseCase("Riyadh"))
         .thenReturn(flowOf(successResponse))
 
       val job = launch {
         weatherDetailsViewModel.uiState.toList(testResults)
       }
+
+      // Act
       weatherDetailsViewModel.loadWeatherForecast("Riyadh")
 
+      // Assert
       MatcherAssert.assertThat(testResults[0], IsInstanceOf.instanceOf(UiState.Init::class.java))
       MatcherAssert.assertThat(testResults[1], IsInstanceOf.instanceOf(UiState.Loading::class.java))
       job.cancel()
